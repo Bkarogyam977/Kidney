@@ -538,15 +538,19 @@ export default function Home() {
         </div>
 
         <div className='bg-black'>
-          <p className='text-white text-center md:text-[12px] text-[7px] md:px-40 px-2 md:py-10 py-3'><span className='text-l text-black font-bold'>Disclaimer:</span> This site is not a part of the Facebook website or Meta Platforms, Inc. Additionally, this site is NOT endorsed by Facebook or Instagram in any way. ‘Facebook’ & ‘Instagram’ are trademarks of Meta Platforms, Inc..
+          <p className='text-white text-center md:text-[12px] text-[7px] md:px-40 px-2 md:py-10 py-3'>
+            <span className='text-l text-black font-bold'>Disclaimer:</span> This website is not affiliated with any third-party platform or entity, including Facebook or Meta Platforms, Inc. We also want to make clear that this site is not endorsed by Facebook or Instagram in any way. The terms ‘Facebook’ and ‘Instagram’ are registered trademarks of Meta Platforms, Inc.
 
-            Here at DGB Training & Consulting Private Limited, we make every effort possible to make sure that we accurately represent our products and services and their potential for income & results. Earning, income, and results statements made by our company and its customers are estimates of what we think you can possibly earn. There is no guarantee that you will make these levels of income and you accept the risk that the earnings and income statements differ by individuals. As with any business, your results may vary and will be based on your individual effort, business experience, expertise, and level of desire. There are no guarantees concerning the level of success you may experience.
+            At BK Arogyam Pvt Ltd, we are committed to representing our services accurately, particularly with respect to potential results from our offerings. However, we make no guarantees regarding the outcomes or success you may achieve. Results can vary significantly depending on individual factors such as effort, experience, and expertise. Statements of potential earnings are based on estimates and do not guarantee a specific level of success.
 
-            The testimonials and examples used are exceptional results, which do not apply to the average purchaser and are not intended to represent or guarantee that anyone will achieve the same or similar results. Each individual’s success depends on his or her background, dedication, desire and motivation. There is no assurance that examples of past earnings can be duplicated in the future. We cannot guarantee your future results and/or success. There are some unknown risks in business and on the internet that we cannot foresee which can reduce results. We are not responsible for your actions. The use of our information, products and services should be based on your own due diligence and you agree that our company is not liable for any success or failure of your business that is directly or indirectly related to the purchase and use of our information, products and services.
+            Testimonials featured on our site are examples of exceptional results, and these may not reflect the typical results experienced by other customers. Success in any endeavor requires a combination of dedication, background, and motivation, and as such, we cannot assure that past performance can be replicated in the future. Additionally, there are inherent risks in any business, including unforeseen challenges that may affect outcomes.
 
-            Contact Us: if you have any questions about this Privacy Policy or Your dealing with Our Website or any of the features, please Contact us at support@deepakbajaj.biz
-            Privacy Policy I Terms and Conditions
+            By using our information, services, or products, you acknowledge that you are responsible for your own actions and results. We are not liable for the outcomes of your business decisions that are based on the information provided by us.
+
+            <strong>Contact Us:</strong> If you have any questions regarding this disclaimer or how we handle your dealings with our site, feel free to reach out at support@bkarogyam.com.
+            <span className="block mt-2">Privacy Policy | Terms and Conditions</span>
           </p>
+
         </div>
       </div>
 
