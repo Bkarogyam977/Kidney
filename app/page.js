@@ -29,15 +29,20 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://www.bkarogyam.com/lapisarogyamission/');
-        const data = response.data[3];
+        // Fetch data from the API
+        const response = await axios.get('https://www.bkarogyam.com/lapisarogyamission/3/');
+        
+        // Assuming the response is a single object based on the JSON structure provided
+        const data = response.data; // Remove the indexing to access the object directly
+    
+        // Set the sales data and calculate the time left
         setSalesData(data);
         setTimeLeft(calculateTimeLeft(data.end_time));
       } catch (error) {
         console.error('Error fetching sales page data:', error);
       }
     };
-
+    
     fetchData();
 
     const timer = setInterval(() => {
@@ -73,11 +78,16 @@ export default function Home() {
   };
 
 
-  // Convert YouTube video link to an embeddable link
   const getEmbedLink = (link) => {
-    return link.replace('watch?v=', 'embed/');
+    try {
+      const url = new URL(link); // Construct the URL
+      const videoId = url.searchParams.get('v'); // Get the video ID
+      return videoId ? `https://www.youtube.com/embed/${videoId}` : ''; // Return embed link if valid
+    } catch (error) {
+      console.error('Invalid video link:', link, error); // Log invalid link
+      return ''; // Return empty string for invalid links
+    }
   };
-
 
   // Pagination settings for Swiper
   const pagination = {
@@ -338,27 +348,32 @@ export default function Home() {
 
 
         <div className="bg-white md:px-20 px-5 pb-10">
-          {/* Grid Container */}
-          <div className="grid grid-cols-3 gap-4">
-            {salesData.patent_review_video.map((video, index) => (
-              <div className="flex flex-col items-center" key={index}>
-                <iframe
-                  width="100%" // Ensure full width for responsiveness
-                  height="250" // Adjusted for mobile views
-                  src={`https://www.youtube.com/embed/${new URL(video.video_link).searchParams.get('v')}`}
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  className="rounded-xl mb-2"
-                ></iframe>
-                <p className="md:text-xl text-sm font-semibold text-black text-center">{video.desination}</p>
-                <p className="text-red-900 md:text-xl text-sm font-bold mt-2 text-center">{video.name}</p>
-                <p className="mt-2 text-center md:text-xl text-sm">⭐⭐⭐⭐⭐</p>
-              </div>
-            ))}
-          </div>
-        </div>
+  {/* Grid Container */}
+  <div className="grid grid-cols-3 gap-4">
+    {salesData.patent_review_video.map((video, index) => (
+      <div className="flex flex-col items-center" key={index}>
+        {/* Check if the video link is valid before attempting to embed */}
+        {video.video_link ? (
+          <iframe
+            width="100%" // Ensure full width for responsiveness
+            height="250" // Adjusted for mobile views
+            src={getEmbedLink(video.video_link)} // Use the getEmbedLink function
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="rounded-xl mb-2"
+          ></iframe>
+        ) : (
+          <p>No video available.</p> // Fallback message
+        )}
+        <p className="md:text-xl text-sm font-semibold text-black text-center">{video.desination}</p>
+        <p className="text-red-900 md:text-xl text-sm font-bold mt-2 text-center">{video.name}</p>
+        <p className="mt-2 text-center md:text-xl text-sm">⭐⭐⭐⭐⭐</p>
+      </div>
+    ))}
+  </div>
+</div>
 
 
 
