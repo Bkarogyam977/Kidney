@@ -30,7 +30,7 @@ export default function Home() {
     const fetchData = async () => {
       try {
         const response = await axios.get('https://www.bkarogyam.com/lapisarogyamission/');
-        const data = response.data[0];
+        const data = response.data[3];
         setSalesData(data);
         setTimeLeft(calculateTimeLeft(data.end_time));
       } catch (error) {
