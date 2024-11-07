@@ -30,7 +30,7 @@ export default function Home() {
     const fetchData = async () => {
       try {
         // Fetch data from the API
-        const response = await axios.get('https://www.bkarogyam.com/lapisarogyamission/3/');
+        const response = await axios.get('https://bkarogyam977.pythonanywhere.com/arogyamission/3/');
         
         // Assuming the response is a single object based on the JSON structure provided
         const data = response.data; // Remove the indexing to access the object directly
